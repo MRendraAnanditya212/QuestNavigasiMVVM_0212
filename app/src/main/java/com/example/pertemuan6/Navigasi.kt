@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.meeting6.view.FormIsian
+import com.example.pertemuan6.view.TampilData
 
 enum class Navigasi {
     FormulirSaya,
@@ -29,3 +30,14 @@ fun DataApp(
                     OnSubmitBtnClick = {
                         navController.navigate(route = Navigasi.Detail.name)
                     }
+                )
+            }
+            composable(route = Navigasi.Detail.name){
+                TampilData(
+                    onBackBtnClick = {cancelAndBackToFormulirSaya(navController)}
+                )
+            }
+        }
+    }
+}
+
